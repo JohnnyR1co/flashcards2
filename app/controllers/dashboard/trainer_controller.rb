@@ -1,4 +1,5 @@
 class Dashboard::TrainerController < Dashboard::BaseController
+  respond_to :html, :js
 
   def index
     if params[:id]
@@ -13,10 +14,7 @@ class Dashboard::TrainerController < Dashboard::BaseController
       end
     end
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    respond_with @card
   end
 
   def review_card
