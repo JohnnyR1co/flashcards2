@@ -3,7 +3,7 @@
 {<img src="https://travis-ci.org/elavretskiy/flashcards.svg?branch=seventh-task"
 alt="Build Status" />}[https://travis-ci.org/elavretskiy/flashcards]
 
-<a href="https://codeclimate.com/github/JohnnyR1co/flashcards2"><img src="https://codeclimate.com/github/JohnnyR1co/flashcards2/badges/gpa.svg" /></a>
+{<img src="https://codeclimate.com/github/JohnnyR1co/flashcards2/badges/gpa.svg" />}[https://codeclimate.com/github/JohnnyR1co/flashcards2]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
