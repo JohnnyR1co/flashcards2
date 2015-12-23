@@ -1,22 +1,16 @@
 class Dashboard::TrainerController < Dashboard::BaseController
+  respond_to :html, :js
 
   def index
-    if params[:id]
-      @card = current_user.cards.find(params[:id])
+    if current_user.current_block
+      @card = current_user.current_block.cards.pending.first
+      @card ||= current_user.current_block.cards.repeating.first
     else
-      if current_user.current_block
-        @card = current_user.current_block.cards.pending.first
-        @card ||= current_user.current_block.cards.repeating.first
-      else
-        @card = current_user.cards.pending.first
-        @card ||= current_user.cards.repeating.first
-      end
+      @card = current_user.cards.pending.first
+      @card ||= current_user.cards.repeating.first
     end
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    respond_with @card
   end
 
   def review_card
