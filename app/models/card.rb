@@ -24,12 +24,14 @@ class Card < ActiveRecord::Base
     sm_hash = SuperMemo.algorithm(interval, repeat, efactor, attempt, distance, 1)
 
     if distance <= 1
-      update(sm_hash.merge!({ review_date: Time.now + interval.to_i.days, attempt: 1 }))
-      { state: true, distance: distance }
+      sm_hash.merge!({ review_date: Time.now + interval.to_i.days, attempt: 1 })
+      state = true
     else
-      update(sm_hash.merge!({ attempt: [attempt + 1, 5].min }))
-      { state: false, distance: distance }
+      sm_hash.merge!({ attempt: [attempt + 1, 5].min })
+      state = false
     end
+    update(sm_hash)
+    { state: state, distance: distance }
   end
 
   def self.pending_cards_notification
