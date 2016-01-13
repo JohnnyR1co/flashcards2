@@ -20,3 +20,4 @@ config/application.yml
 public/uploads/
 config/provision/keys/id_rsa.pub
 config/provision/keys/id_rsa
+.vagrant/machines/default/virtualbox/private_key
