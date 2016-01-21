@@ -1,8 +1,9 @@
 RailsAdmin.config do |config|
   config.authenticate_with do
-  # Use sorcery's before filter to auth users
-  require_login
+    # Use sorcery's before filter to auth users
+    require_login
   end
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -12,7 +13,7 @@ RailsAdmin.config do |config|
   # config.current_user_method(&:current_user)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
 
   ## == Pundit ==
   # config.authorize_with :pundit

@@ -265,7 +265,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cancancan
+  cancancan (~> 1.10)
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
