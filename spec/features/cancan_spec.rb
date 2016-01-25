@@ -4,7 +4,7 @@ require "cancan/matchers"
 include LoginHelper
 
 describe "User" do
-  let(:user){ create(:user) }
+  let(:user) { create(:user) }
   let(:ability) { AdminAbility.new(user) }
 
   it "when user is admin he can manage all" do
